@@ -1,0 +1,45 @@
+﻿@inherits LayoutComponentBase
+<div class="nsl-container">
+    <div class="nsl-title-bar">
+        <div class="@collapsedButtonClass" @onclick=ToggleCollapsed >
+            @if(collapsed)
+            {
+                <span class="bi bi-caret-down-fill" aria-hidden="true" />
+            }
+            else
+            {
+                <span class="bi bi-caret-up-fill" aria-hidden="true" />
+            }
+            <span class="ps-3">Menu demo</span>
+        </div>
+        <div class="nsl-title">
+            Title goes here
+        </div>
+    </div>
+    <div class="nsl-navstack">
+        <NavStack Collapsed="@collapsed">
+            <NavButton Icon="bi-house-door-fill"
+            Label="Home"
+            Link="" />
+            <NavButton Icon="bi-plus"
+            Label="Counter"
+            Link="counter" />
+            <NavButton Icon="bi-cloud-fill"
+            Label="Weather"
+            Link="weather" />
+        </NavStack>
+        <div class="content">
+            @Body
+        </div>
+    </div>
+</div>
+
+@code {
+    private bool collapsed = false;
+
+    private string collapsedButtonClass =>
+        collapsed ? "nsl-collapse-button-checked" : "nsl-collapse-button";
+
+    private void ToggleCollapsed(MouseEventArgs args) 
+        => collapsed = !collapsed;
+}

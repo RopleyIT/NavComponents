@@ -1,0 +1,9 @@
+﻿.ns-collapsed {
+    flex: 0 1 auto;
+    width: 3rem;
+}
+
+.ns-expanded {
+    flex: 0 1 auto;
+    width: 12rem;
+}

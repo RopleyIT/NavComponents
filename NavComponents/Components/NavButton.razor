@@ -1,0 +1,77 @@
+﻿@inject NavigationManager NavManager
+<div class="@linkClass()" @onclick=Navigate>
+    <div class="@nbIconClass()">
+        <span class="@IconClass()" aria-hidden="true"/>
+    </div>
+    <div class="@labelClass()">
+        <span>@Label</span>
+    </div>
+</div>
+
+@code {
+    [CascadingParameter(Name = "ParentNavStack")]
+    private NavStack? ParentNavStack { get; set; }
+
+    [Parameter]
+    public string? Icon { get; set; }
+
+    [Parameter]
+    public string Label { get; set; } = string.Empty;
+
+    [Parameter]
+    public string Link { get; set; } = string.Empty;
+
+    private void Navigate()
+    {
+        NavManager.NavigateTo(Link);
+    }
+
+    private string IconClass()
+    {
+        string result = string.Empty;
+        if(Icon != null)
+        {
+            if (Icon.StartsWith("bi-"))
+                result += $"bi {Icon}";
+            else if (Icon.StartsWith("oi-"))
+                result += $"oi {Icon}";
+            else if (Icon.StartsWith("glyphicon-"))
+                result += $"glyphicon {Icon}";
+            else if (Icon.StartsWith("fa-"))
+                result += $"fas {Icon}";
+        }
+        return result;
+    }
+
+    private string nbIconClass() 
+        => IsActive ? "nb-icon isactive" : "nb-icon";
+
+    private bool IsActive =>
+    NavManager.ToAbsoluteUri(Link) == new Uri(NavManager.Uri);
+
+    private string labelClass()
+    {
+        string result = "nb-label";
+        if(ParentNavStack != null)
+        {
+            if (IsActive)
+                result += " isactive";
+            if (ParentNavStack.Collapsed)
+                result = "nb-hidden";
+        }
+        return result;
+    }
+
+    private string linkClass()
+    {
+        string result = "nb-link";
+        if (ParentNavStack != null)
+        {
+            if (IsActive)
+                result += " isactive";
+            if (ParentNavStack.Collapsed)
+                result += " collapsed";
+        }
+        return result;
+    }
+}

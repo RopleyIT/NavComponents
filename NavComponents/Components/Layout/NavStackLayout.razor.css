@@ -1,0 +1,77 @@
+﻿.nsl-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.nsl-title-bar {
+    display: flex;
+    flex-direction: row;
+    height: 3rem;
+}
+
+.nsl-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 auto;
+    color: black;
+    font-weight: 700;
+    font-size: larger;
+    background-color:lightblue;
+}
+
+.nsl-collapse-button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex: 0 1 auto;
+    background-color: #777;
+    color: white;
+    padding: 1rem;
+    width: 12rem;
+}
+
+.nsl-collapse-button:hover {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex: 0 1 auto;
+    background-color: #999;
+    color: white;
+    padding: 1rem;
+    width: 12rem;
+}
+
+.nsl-collapse-button-checked {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex: 0 1 auto;
+    background-color: black;
+    color: white;
+    padding: 1rem;
+    width: 12rem;
+}
+
+.nsl-collapse-button-checked:hover {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex: 0 1 auto;
+    background-color: #444;
+    color: white;
+    padding: 1rem;
+    width: 12rem;
+}
+
+.nsl-navstack {
+    display: flex;
+    flex-direction: row;
+    flex: 1 1 auto;
+}
+
+.content {
+    flex: 1 1 auto;
+    margin: 1rem;
+}

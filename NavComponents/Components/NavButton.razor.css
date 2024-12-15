@@ -1,0 +1,35 @@
+﻿.nb-link {
+    display: flex;
+    flex-direction: row;
+    background-color: #036;
+    cursor: pointer;
+}
+
+.nb-link:hover {
+    background-color:#258;
+}
+
+.collapsed {
+    width: 3rem;
+}
+
+.nb-label {
+    flex: 1 1 auto;
+    padding: 1rem 1rem 1rem 0;
+    color: white;
+}
+
+.nb-hidden {
+    display:none;
+}
+
+.nb-icon {
+    flex:0 1 auto;
+    padding:1rem;
+    color:white;
+}
+
+.isactive {
+    font-weight: 700;
+    background-color: #47A;
+}

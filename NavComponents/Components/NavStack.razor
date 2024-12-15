@@ -1,0 +1,16 @@
+﻿<div class="@NavStackClass">
+    <CascadingValue Name="ParentNavStack" Value="@this">
+        @ChildContent
+    </CascadingValue>
+</div>
+
+@code {
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
+
+    [Parameter]
+    public bool Collapsed { get; set; } = false;
+
+    public string NavStackClass =>
+        Collapsed ? "ns-collapsed" : "ns-expanded";
+}
