@@ -2,6 +2,7 @@
     <CascadingValue Name="ParentNavStack" Value="@this">
         @ChildContent
     </CascadingValue>
+    <div class="@NavStackPadding"/>
 </div>
 
 @code {
@@ -11,6 +12,9 @@
     [Parameter]
     public bool Collapsed { get; set; } = false;
 
-    public string NavStackClass =>
+    private string NavStackClass =>
         Collapsed ? "ns-collapsed" : "ns-expanded";
+
+    private string NavStackPadding =>
+        Collapsed ? "ns-pad-collapsed" : "ns-pad-expanded";
 }

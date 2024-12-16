@@ -1,12 +1,12 @@
 ﻿.nb-link {
+    flex: 0 1 auto;
     display: flex;
     flex-direction: row;
-    background-color: #036;
     cursor: pointer;
 }
 
 .nb-link:hover {
-    background-color:#258;
+    background-color:rgba(255,255,255,0.25);
 }
 
 .collapsed {
@@ -31,5 +31,5 @@
 
 .isactive {
     font-weight: 700;
-    background-color: #47A;
+    background-color: rgba(255,255,255,0.075);
 }

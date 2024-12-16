@@ -1,9 +1,13 @@
 ﻿.ns-collapsed {
-    flex: 0 1 auto;
-    width: 3rem;
+    flex: 0 1 3rem;
+    display: flex;
+    flex-direction: column;
+    background-color: #036;
 }
 
 .ns-expanded {
-    flex: 0 1 auto;
-    width: 12rem;
+    flex: 0 1 12rem;
+    display: flex;
+    flex-direction: column;
+    background-color: #036;
 }

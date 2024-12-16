@@ -23,7 +23,8 @@ Each `<NavButton/>` has three attributes that can be set:
 | `Label`   |  The textual label to appear alongside the icon if the menu is not collapsed.  |
 | `Link`    |  The link to the page to be displayed in the `@Body` part of the page. The link should match one of the labels found after an `@page` directive on one of the Blazor pages of your application.    |
 
-Also included in the `Components` folder is a `TopTitle.razor` component. This takes
-child content between its opening and closing tags, and automatically puts a bold title
-in the title bar of the layout as well as populating the `<PageTitle/>` Blazor component
-that copies the title into the HTML header.
+Also included in the `Components` folder is a `TopTitle.razor` component. 
+This takes child content between its opening and closing tags, and 
+automatically puts a bold title in the title bar of the layout. It also 
+populates a `<PageTitle/>` Blazor component so that it copies the title 
+into the HTML header.
