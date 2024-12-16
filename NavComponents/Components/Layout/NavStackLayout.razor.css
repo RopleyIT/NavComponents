@@ -17,7 +17,6 @@
     align-items: center;
     flex: 1 1 auto;
     color: black;
-    font-weight: 700;
     font-size: larger;
     background-color:lightblue;
 }
@@ -32,17 +31,10 @@
     padding: 1rem;
     width: 12rem;
     cursor: pointer;
-}
-
-.nsl-collapse-button:hover {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    flex: 0 1 auto;
-    background-color: #999;
-    color: white;
-    padding: 1rem;
-    width: 12rem;
+    &:hover
+    {
+        background-color: #999;
+    }
 }
 
 .nsl-collapse-button-checked {
@@ -55,17 +47,10 @@
     padding: 1rem;
     width: 12rem;
     cursor: pointer;
-}
-
-.nsl-collapse-button-checked:hover {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    flex: 0 1 auto;
-    background-color: #444;
-    color: white;
-    padding: 1rem;
-    width: 12rem;
+    &:hover
+    {
+        background-color: #444;
+    }
 }
 
 .nsl-navstack {

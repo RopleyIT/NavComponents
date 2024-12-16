@@ -1,13 +1,10 @@
-﻿.ns-collapsed {
-    flex: 0 1 3rem;
-    display: flex;
-    flex-direction: column;
-    background-color: #036;
-}
-
-.ns-expanded {
+﻿.ns-nav {
     flex: 0 1 12rem;
     display: flex;
     flex-direction: column;
     background-color: #036;
+    &.collapsed
+    {
+        flex: 0 1 3rem;
+    }
 }

@@ -9,8 +9,8 @@
 </div>
 
 @code {
-    [CascadingParameter(Name = "ParentNavStack")]
-    private NavStack? ParentNavStack { get; set; }
+    [CascadingParameter(Name = "Collapsed")]
+    private bool Collapsed { get; set; } = false;
 
     [Parameter]
     public string? Icon { get; set; }
@@ -44,7 +44,7 @@
     }
 
     private string nbIconClass() 
-        => IsActive ? "nb-icon isactive" : "nb-icon";
+        => "nb-icon" + (IsActive ? " isactive" : string.Empty);
 
     private bool IsActive =>
     NavManager.ToAbsoluteUri(Link) == new Uri(NavManager.Uri);
@@ -52,26 +52,20 @@
     private string labelClass()
     {
         string result = "nb-label";
-        if(ParentNavStack != null)
-        {
-            if (IsActive)
-                result += " isactive";
-            if (ParentNavStack.Collapsed)
-                result = "nb-hidden";
-        }
+        if (IsActive)
+            result += " isactive";
+        if (Collapsed)
+            result = "nb-hidden";
         return result;
     }
 
     private string linkClass()
     {
         string result = "nb-link";
-        if (ParentNavStack != null)
-        {
-            if (IsActive)
-                result += " isactive";
-            if (ParentNavStack.Collapsed)
-                result += " collapsed";
-        }
+        if (IsActive)
+            result += " isactive";
+        if (Collapsed)
+            result += " collapsed";
         return result;
     }
 }
