@@ -1,0 +1,7 @@
+﻿@using Microsoft.AspNetCore.Components.Sections
+<PageTitle>@ChildContent</PageTitle>
+<SectionContent SectionName="nsl-title-text">@ChildContent</SectionContent>
+@code {
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; } 
+}

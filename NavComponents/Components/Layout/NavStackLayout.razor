@@ -1,4 +1,5 @@
-﻿@inherits LayoutComponentBase
+﻿@using Microsoft.AspNetCore.Components.Sections
+@inherits LayoutComponentBase
 <div class="nsl-container">
     <div class="nsl-title-bar">
         <div class="@collapsedButtonClass" @onclick=ToggleCollapsed >
@@ -13,7 +14,7 @@
             <span class="ps-3">Menu demo</span>
         </div>
         <div class="nsl-title">
-            Title goes here
+            <SectionOutlet SectionName="nsl-title-text"/>
         </div>
     </div>
     <div class="nsl-navstack">
