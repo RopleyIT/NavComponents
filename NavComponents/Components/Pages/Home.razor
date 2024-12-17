@@ -3,3 +3,84 @@
 @using NavComponents.Components.Layout
 @layout NavStackLayout
 <TopTitle>Home Page</TopTitle>
+<h2>Collapsible Navbar Layout</h2>
+<p>
+    This project contains an implementation of a simple 
+    alternative Blazor layout that has a collapsible 
+    left vertical menu bar. The menu bar either 
+    just has icons in a narrow column, or can be 
+    expanded to include captions alongside these 
+    icons.
+</p>
+<p>
+    The menu items are integrated with the Blazor 
+    navigation manager so that clicking them navigates 
+    to a selected URI, being a component labeled with 
+    an <code>@@page</code> directive at the top.
+</p>
+
+<h3>Using the layout</h3>
+<p>
+The layout is contained in the files 
+<code>NavStackLayout.razor</code> and 
+<code>NavStackLayout.razor.css</code> 
+to be found in the <code>Layout</code> folder. 
+This can either be used as the layout explicitly by 
+placing the following at the top of any page that 
+wishes to use this layout:</p>
+<pre>
+@@using NavComponents.Components.Layout
+@@layout NavStackLayout
+</pre>
+<p>Alternatively it can be installed as the default layout manager 
+by altering the <code>RouteView</code> element in 
+<code>Routes.razor</code> to the following:</p>
+<pre>
+&lt;RouteView RouteData="routeData" DefaultLayout="typeof(Layout.NavStackLayout)" /&gt;
+</pre>
+<p>
+Menu items consist of <code>&lt;NavButton /&gt;</code> elements 
+inside a <code>&lt;NavStack /&gt</code> element.</p>
+
+<p>
+Each <code>&lt;NavButton /&gt;</code> has three attributes that can be set:</p>
+<table style="width:36rem;">
+    <tr>
+        <th style="width:9rem;">Attribute</th>
+        <th>Value</th>
+    </tr>
+    <tr>
+        <td><code>Icon</code></td>
+        <td>The name of the icon to be used alongside the label. 
+            This can be one of the bootstrap icons (name starting <code>bi-</code>), 
+            open icons (name starting <code>oi-</code>),
+            glyph icons (name starting <code>glyphicon-</code>) 
+            or font awesome icons (names starting with <code>fa-</code>).
+        </td>
+    </tr>
+    <tr>
+        <td><code>Label</code></td>
+        <td>
+            The textual label to appear alongside the icon 
+            if the menu is not collapsed.
+        </td>
+    </tr>
+    <tr>
+        <td><code>Link</code></td>
+        <td>
+            The link to the page to be displayed in the 
+            <code>@@Body</code> part of the page. The link 
+            should match one of the labels found after an 
+            <code>@@page</code> directive on one of the 
+            Blazor pages of your application.
+        </td>
+    </tr>
+</table>
+<p>
+    Also included in the <code>Components</code> folder is a
+    <code>TopTitle.razor</code> component.
+    This takes child content between its opening and closing tags, and 
+    automatically puts a bold title in the title bar of the layout. It also 
+    populates a <code>&lt;PageTitle /&gt;</code> Blazor component so that 
+    it copies the title into the HTML header.
+</p>

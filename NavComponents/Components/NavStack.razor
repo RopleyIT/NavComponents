@@ -12,5 +12,5 @@
     public bool Collapsed { get; set; } = false;
 
     private string NavStackClass =>
-        Collapsed ? "ns-nav collapsed" : "ns-nav";
+        "ns-nav" + (Collapsed ? " collapsed" : string.Empty);
 }

@@ -21,10 +21,7 @@
     [Parameter]
     public string Link { get; set; } = string.Empty;
 
-    private void Navigate()
-    {
-        NavManager.NavigateTo(Link);
-    }
+    private void Navigate() => NavManager.NavigateTo(Link);
 
     private string IconClass()
     {
@@ -47,7 +44,7 @@
         => "nb-icon" + (IsActive ? " isactive" : string.Empty);
 
     private bool IsActive =>
-    NavManager.ToAbsoluteUri(Link) == new Uri(NavManager.Uri);
+        NavManager.ToAbsoluteUri(Link) == new Uri(NavManager.Uri);
 
     private string labelClass()
     {
