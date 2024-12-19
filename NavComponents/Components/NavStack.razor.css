@@ -1,5 +1,5 @@
 ﻿.ns-nav {
-    flex: 0 1 12rem;
+    flex: 0 1 auto;
     display: flex;
     flex-direction: column;
     background-color: #036;

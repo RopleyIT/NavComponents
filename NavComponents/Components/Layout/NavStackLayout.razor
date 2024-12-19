@@ -4,13 +4,12 @@
     <div class="nsl-title-bar">
         <div class=@collapsedButtonClass @onclick=ToggleCollapsed >
             <span class=@collapsedIconClass aria-hidden="true" />
-            <span class="ps-3">Application Name</span>
         </div>
         <div class="nsl-title">
             <SectionOutlet SectionName="nsl-title-text" />
         </div>
     </div>
-    <div class="nsl-navstack">
+    <div class="nsl-navbody">
         <NavStack Collapsed="@collapsed">
             <NavButton Icon="bi-house-door-fill"
             Label="Home"
