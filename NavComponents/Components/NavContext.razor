@@ -1,14 +1,27 @@
 ﻿@inject NavigationManager NavManager
-<div class="@linkClass()" @onclick=Navigate>
+<div class="@linkClass()" @onclick=ToggleShrunk>
     <div class="@nbIconClass()">
-        <span class="@IconClass()" aria-hidden="true"/>
+        <span class="@IconClass()" aria-hidden="true" />
     </div>
     <div class="@labelClass()">
         <span>@Label</span>
     </div>
 </div>
+<div class="@NavContextClass">
+    @ChildContent
+</div>
 
 @code {
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
+
+    private bool shrunk  = true;
+
+    private void ToggleShrunk() => shrunk = !shrunk;
+
+    private string NavContextClass =>
+        shrunk ? "nc-hidden" : "nc-container";
+
     [CascadingParameter(Name = "ParentNavStack")]
     private NavStack? ParentNavStack { get; set; }
 
@@ -21,12 +34,10 @@
     [Parameter]
     public string Link { get; set; } = string.Empty;
 
-    private void Navigate() => NavManager.NavigateTo(Link);
-
     private string IconClass()
     {
         string result = string.Empty;
-        if(Icon != null)
+        if (Icon != null)
         {
             if (Icon.StartsWith("bi-"))
                 result += $"bi {Icon}";
@@ -40,11 +51,10 @@
         return result;
     }
 
-    private string nbIconClass() 
+    private string nbIconClass()
         => "nb-icon" + (IsActive ? " isactive" : string.Empty);
 
-    private bool IsActive =>
-        NavManager.ToAbsoluteUri(Link) == new Uri(NavManager.Uri);
+    private bool IsActive => !shrunk;
 
     private string labelClass()
     {

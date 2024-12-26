@@ -1,0 +1,46 @@
+﻿.nb-link {
+    flex: 0 1 auto;
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+}
+
+    .nb-link:hover {
+        background-color: rgba(255,255,255,0.25);
+    }
+
+.collapsed {
+    width: 3rem;
+}
+
+.nb-label {
+    flex: 1 1 auto;
+    padding: 1rem 2rem 1rem 0;
+    color: white;
+}
+
+.nb-hidden {
+    display: none;
+}
+
+.nb-icon {
+    flex: 0 1 auto;
+    padding: 1rem;
+    color: white;
+}
+
+.isactive {
+    font-weight: 700;
+    background-color: rgba(255,255,255,0.075);
+}
+
+.nc-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #336;
+    color: white;
+}
+
+.nc-hidden {
+    display: none;
+}
