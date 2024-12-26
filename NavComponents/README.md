@@ -23,6 +23,19 @@ Each `<NavButton/>` has three attributes that can be set:
 | `Label`   |  The textual label to appear alongside the icon if the menu is not collapsed.  |
 | `Link`    |  The link to the page to be displayed in the `@Body` part of the page. The link should match one of the labels found after an `@page` directive on one of the Blazor pages of your application.    |
 
+##Nested menus
+
+Instead of an item in the nav bar being associated with a link to a page, 
+it is possible to make it become an expand/collapse button for a set of
+grouped link items beneath it, accordion-style.
+
+These expand/collapse buttons are implemented as `<NavContext>` components,
+and implement the following set of attributes:
+| Attribute | Value |
+| --------- | ----- |
+| `Icon`    | The name of the icon to be used alongside the label. This can be one of the bootstrap icons (name starting `bi-`), open icons (name starting `oi-`) glyph icons (name starting `glyphicon-`) or font awesome icons (names starting with `fa-`).   |
+| `Label`   |  The textual label to appear alongside the icon if the expand/collapse button is not collapsed.  |
+
 Also included in the `Components` folder is a `TopTitle.razor` component. 
 This takes child content between its opening and closing tags, and 
 automatically puts a bold title in the title bar of the layout. It also 
