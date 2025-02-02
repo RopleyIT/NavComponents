@@ -45,7 +45,7 @@
     }
 
     private string nbIconClass() 
-        => "nb-icon" + (IsActive ? " isactive" : string.Empty);
+        => ParentNavStack.NoIcons ? "nb-hidden" : "nb-icon" + (IsActive ? " isactive" : string.Empty);
 
     private bool IsActive =>
         NavManager.ToAbsoluteUri(Link) == new Uri(NavManager.Uri);

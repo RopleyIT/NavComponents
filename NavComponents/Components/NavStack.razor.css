@@ -8,3 +8,7 @@
         flex: 0 1 3rem;
     }
 }
+.ns-hide {
+    flex: 0 1 auto;
+    display: none;
+}

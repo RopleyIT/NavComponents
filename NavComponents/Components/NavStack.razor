@@ -8,9 +8,26 @@
     [Parameter]
     public RenderFragment? ChildContent { get; set; }
 
+    /// <summary>
+    /// Collapsed is used by a top-level item like a button in the
+    /// title bar of the layout file. If set to true, it causes the
+    /// left nav bar to be reduced either to just a column of icons
+    /// if NoIcons is not set, or is set to false. If NoIcons is set
+    /// to true, Collapsed will cause the whole nav bar to disappear,
+    /// providing maximum acreage for page content.
+    /// </summary>
     [Parameter]
     public bool Collapsed { get; set; } = false;
 
+    /// <summary>
+    /// Set to true to hide all icons and to make the navbar disappear
+    /// when Collapsed is set to true. When Collapsed is false, just 
+    /// the labels for each NavButton or NavContext will be displayed,
+    /// even if icons were setup for the corresponding menu items.
+    /// </summary>
+    [Parameter]
+    public bool NoIcons { get; set; } = false;
+
     private string NavStackClass =>
-        "ns-nav" + (Collapsed ? " collapsed" : string.Empty);
+        (NoIcons && Collapsed) ? "ns-hide" : "ns-nav" + (Collapsed ? " collapsed" : string.Empty);
 }

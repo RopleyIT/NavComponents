@@ -15,7 +15,7 @@
 
 .nb-label {
     flex: 1 1 auto;
-    padding: 1rem 2rem 1rem 0;
+    padding: 1rem 2rem 1rem 1.5rem;
     color: white;
 }
 
@@ -25,7 +25,7 @@
 
 .nb-icon {
     flex: 0 1 auto;
-    padding: 1rem;
+    padding: 1rem 0rem 1rem 1rem;
     color: white;
 }
 
