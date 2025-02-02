@@ -4,7 +4,7 @@
         <span class="@IconClass()" aria-hidden="true" />
     </div>
     <div class="@labelClass()">
-        <span>@Label</span>
+        <span>@Label</span>&nbsp;&nbsp;<span class="@shrunkClass()" aria-hidden="true" />
     </div>
 </div>
 <div class="@NavContextClass">
@@ -45,7 +45,19 @@
             else if (Icon.StartsWith("fa-"))
                 result += $"fas {Icon}";
         }
+        else
+        {
+            result += $"bi bi-caret-right-fill hide-icon";
+        }
         return result;
+    }
+
+    private string shrunkClass()
+    {
+        if (shrunk)
+            return "bi bi-caret-down-fill";
+        else
+            return "bi bi-caret-up-fill";
     }
 
     private string nbIconClass()

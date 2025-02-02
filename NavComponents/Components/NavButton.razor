@@ -37,6 +37,10 @@
             else if (Icon.StartsWith("fa-"))
                 result += $"fas {Icon}";
         }
+        else
+        {
+            result += $"bi bi-caret-right-fill hide-icon";
+        }
         return result;
     }
 

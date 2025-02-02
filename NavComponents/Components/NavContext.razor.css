@@ -29,6 +29,10 @@
     color: white;
 }
 
+.hide-icon {
+    color: transparent;
+}
+
 .isactive {
     font-weight: 700;
     background-color: rgba(255,255,255,0.075);
